@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>《搜神記》與志怪小說 | 互動學習指引</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            background-color: #f7f5f0; /* 米色背景，類似紙張 */
+            color: #2d3748;
+        }
+        h1, h2, h3, h4, .serif {
+            font-family: 'Noto Serif TC', serif;
+        }
+        .scroll-smooth {
+            scroll-behavior: smooth;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .classical-text {
+            border-left: 4px solid #8b3a3a; /* 深紅色邊框 */
+            background-color: #fdfbf7;
+            padding: 1rem;
+            font-style: italic;
+            color: #4a5568;
+        }
+        .active-nav {
+            background-color: #8b3a3a;
+            color: white;
+        }
+        /* 自定義捲軸 */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #c5afa0;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #a08878;
+        }
+    </style>
+</head>
+<body class="antialiased scroll-smooth">
+
+    <!-- 導航列 -->
+    <nav class="fixed top-0 w-full bg-white/95 backdrop-blur shadow-md z-50 border-b border-stone-200">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <span class="text-2xl font-bold text-red-900 serif">搜神記</span>
+                    <span class="hidden md:inline text-sm text-gray-500">互動學習指引</span>
+                </div>
+                <div class="hidden md:flex space-x-1" id="desktop-nav">
+                    <a href="#intro" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-stone-100 transition">何謂志怪</a>
+                    <a href="#background" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-stone-100 transition">時代背景</a>
+                    <a href="#author" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-stone-100 transition">干寶其人</a>
+                    <a href="#content" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-stone-100 transition">全書架構</a>
+                    <a href="#stories" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-stone-100 transition">篇章選讀</a>
+                    <a href="#quiz" class="px-3 py-2 rounded-md text-sm font-medium hover:bg-stone-100 transition text-red-700">自我評量</a>
+                </div>
+                <!-- 手機選單按鈕 -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-gray-600 hover:text-gray-900 focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- 手機選單 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <a href="#intro" class="block px-4 py-2 text-sm hover:bg-stone-100">何謂志怪</a>
+            <a href="#background" class="block px-4 py-2 text-sm hover:bg-stone-100">時代背景</a>
+            <a href="#author" class="block px-4 py-2 text-sm hover:bg-stone-100">干寶其人</a>
+            <a href="#content" class="block px-4 py-2 text-sm hover:bg-stone-100">全書架構</a>
+            <a href="#stories" class="block px-4 py-2 text-sm hover:bg-stone-100">篇章選讀</a>
+            <a href="#quiz" class="block px-4 py-2 text-sm text-red-700 font-bold hover:bg-stone-100">自我評量</a>
+        </div>
+    </nav>
+
+    <!-- 主標題區 -->
+    <header class="pt-24 pb-12 px-4 bg-stone-100 border-b border-stone-200">
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="inline-block px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-semibold mb-4 tracking-wide">魏晉南北朝文學</span>
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 serif tracking-wider">《搜神記》與志怪小說</h1>
+            <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+                探討魏晉南北朝的鬼神信仰、社會動盪與文學想像。從干寶的筆下看見古人對生死的關懷與對現實的反思。
+            </p>
+            <div class="flex justify-center gap-4">
+                <a href="#intro" class="px-6 py-3 bg-red-900 text-white rounded-lg shadow hover:bg-red-800 transition">開始學習</a>
+                <a href="https://www.youtube.com/watch?v=Kz8OuQrrc70&t=130s" target="_blank" class="px-6 py-3 bg-white text-gray-800 border border-gray-300 rounded-lg shadow hover:bg-gray-50 transition flex items-center">
+                    <svg class="w-5 h-5 mr-2 text-red-600" fill="currentColor" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                    觀看導讀影片
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-5xl mx-auto px-4 py-8 space-y-16">
+
+        <!-- 1. 何謂志怪 -->
+        <section id="intro" class="scroll-mt-24">
+            <div class="flex items-center mb-6">
+                <div class="h-8 w-1 bg-red-800 mr-3"></div>
+                <h2 class="text-3xl font-bold serif text-gray-800">何謂「志怪」？</h2>
+            </div>
+            
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 mb-8">
+                <blockquote class="text-xl text-center font-medium text-gray-700 italic serif mb-4">
+                    「《齊諧》者，志怪者也。」
+                </blockquote>
+                <p class="text-center text-sm text-gray-500">— 出自《莊子‧逍遙遊》</p>
+                <div class="mt-6 text-center">
+                    <span class="inline-block bg-stone-100 px-4 py-2 rounded-lg text-stone-700 mx-2 mb-2"><strong>志</strong>：記載</span>
+                    <span class="inline-block bg-stone-100 px-4 py-2 rounded-lg text-stone-700 mx-2 mb-2"><strong>怪</strong>：怪異</span>
+                    <p class="mt-4 text-gray-700"><strong>定義：</strong>專門記載神鬼、靈怪、奇聞異事的小說。</p>
+                </div>
+            </div>
+
+            <h3 class="text-xl font-bold mb-4 text-gray-800">志怪小說書寫的四大對象</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition card-hover border-t-4 border-indigo-500">
+                    <div class="text-indigo-600 mb-2 font-bold text-lg">神仙鬼魂</div>
+                    <p class="text-sm text-gray-600">上古以來神仙、鬼魂的相關傳說。</p>
+                </div>
+                <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition card-hover border-t-4 border-emerald-500">
+                    <div class="text-emerald-600 mb-2 font-bold text-lg">精怪妖異</div>
+                    <p class="text-sm text-gray-600">各種不同的妖怪、動植物修煉成精的故事。</p>
+                </div>
+                <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition card-hover border-t-4 border-amber-500">
+                    <div class="text-amber-600 mb-2 font-bold text-lg">凶祥卜夢</div>
+                    <p class="text-sm text-gray-600">關於命理、吉凶、果報與夢兆的故事。</p>
+                </div>
+                <div class="bg-white p-5 rounded-lg shadow-sm hover:shadow-md transition card-hover border-t-4 border-rose-500">
+                    <div class="text-rose-600 mb-2 font-bold text-lg">殊方異物</div>
+                    <p class="text-sm text-gray-600">記載各地、異域的奇景與奇物。</p>
+                </div>
+            </div>
+            
+            <div class="mt-6 bg-stone-50 p-4 rounded-lg border border-stone-200">
+                <h4 class="font-bold text-gray-800 mb-2">寫作目的</h4>
+                <ul class="list-disc list-inside text-gray-700 space-y-1">
+                    <li><span class="font-medium text-red-800">出於獵奇</span>：滿足對怪異事物的好奇心。</li>
+                    <li><span class="font-medium text-red-800">為了宣傳</span>：宣揚佛道等宗教思想。</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- 2. 時代背景 -->
+        <section id="background" class="scroll-mt-24">
+            <div class="flex items-center mb-6">
+                <div class="h-8 w-1 bg-red-800 mr-3"></div>
+                <h2 class="text-3xl font-bold serif text-gray-800">志怪興盛的背景</h2>
+            </div>
+
+            <!-- 魯迅語錄 -->
+            <div class="mb-8 relative bg-white p-6 rounded-lg shadow-lg">
+                <div class="absolute top-0 left-0 -mt-2 -ml-2 text-6xl text-gray-200 serif">“</div>
+                <p class="relative z-10 text-gray-700 leading-relaxed text-lg">
+                    中國本信巫，秦漢以來，神仙之說盛行，漢末又大暢巫風，而鬼道愈熾；會小乘佛教亦入中土，漸見流傳。凡此，皆張皇鬼神，稱道靈異，故自晉訖隋，特多鬼神志怪之書。
+                </p>
+                <div class="mt-4 text-right font-bold text-gray-600">— 魯迅《中國小說史略》</div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- 社會因素 -->
+                <div class="bg-white p-6 rounded-xl border border-gray-200">
+                    <h3 class="text-xl font-bold mb-4 text-gray-800 flex items-center">
+                        <span class="bg-gray-800 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm mr-2">社</span>
+                        社會與歷史
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="h-2 w-2 mt-2 bg-red-500 rounded-full mr-3 shrink-0"></span>
+                            <div>
+                                <strong class="block text-gray-800">動盪與戰亂</strong>
+                                <span class="text-sm text-gray-600">魏晉南北朝政權更迭，生死無常，人民對生死的思考加深。</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="h-2 w-2 mt-2 bg-red-500 rounded-full mr-3 shrink-0"></span>
+                            <div>
+                                <strong class="block text-gray-800">玄學興盛</strong>
+                                <span class="text-sm text-gray-600">名士崇尚玄學，探討宇宙本源，助長了神秘色彩的創作。</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="h-2 w-2 mt-2 bg-red-500 rounded-full mr-3 shrink-0"></span>
+                            <div>
+                                <strong class="block text-gray-800">家族與階級</strong>
+                                <span class="text-sm text-gray-600">門閥政治下，家庭鬥爭激烈（如妾室受害），冤魂復仇故事反映了對社會不公的關注。</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- 宗教因素 -->
+                <div class="bg-white p-6 rounded-xl border border-gray-200">
+                    <h3 class="text-xl font-bold mb-4 text-gray-800 flex items-center">
+                        <span class="bg-amber-600 text-white w-8 h-8 rounded-full flex items-center justify-center text-sm mr-2">宗</span>
+                        宗教與思想
+                    </h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="h-2 w-2 mt-2 bg-amber-500 rounded-full mr-3 shrink-0"></span>
+                            <div>
+                                <strong class="block text-gray-800">佛教影響 (鬼魂與輪迴)</strong>
+                                <span class="text-sm text-gray-600">引入六道輪迴、因果報應觀念。例如：死後復生講述陰間見聞。</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="h-2 w-2 mt-2 bg-amber-500 rounded-full mr-3 shrink-0"></span>
+                            <div>
+                                <strong class="block text-gray-800">道教影響 (神仙與長生)</strong>
+                                <span class="text-sm text-gray-600">追求長生不老、修道升天、陰曹地府觀念。</span>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="h-2 w-2 mt-2 bg-amber-500 rounded-full mr-3 shrink-0"></span>
+                            <div>
+                                <strong class="block text-gray-800">佛道融合</strong>
+                                <span class="text-sm text-gray-600">《冤魂志》等作品結合了陰間報仇與因果報應。</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. 干寶其人 -->
+        <section id="author" class="scroll-mt-24">
+            <div class="flex items-center mb-6">
+                <div class="h-8 w-1 bg-red-800 mr-3"></div>
+                <h2 class="text-3xl font-bold serif text-gray-800">作者：干寶</h2>
+            </div>
+            
+            <div class="bg-stone-800 text-stone-100 rounded-xl p-8 shadow-xl">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-1/3 border-r border-stone-600 pr-0 md:pr-8">
+                        <h3 class="text-2xl font-bold mb-2 text-amber-500">史官身分</h3>
+                        <p class="mb-4 text-sm text-stone-300">東晉元帝時擔任佐著作郎，曾修國史《晉紀》（已失傳），史筆嚴謹，人稱《良史》。</p>
+                        <h3 class="text-2xl font-bold mb-2 text-amber-500">有神論者</h3>
+                        <p class="mb-4 text-sm text-stone-300">自言寫作目的是「發明神道之不誣」，旨在證明鬼神確實存在。</p>
+                        <div class="mt-4 p-3 bg-stone-700 rounded text-xs">
+                            <span class="block font-bold mb-1 text-amber-300">資料來源：</span>
+                            1. 承於前載 (古書)<br>
+                            2. 廣收遺佚 (民間傳說)<br>
+                            3. 採訪近世之事 (當代傳聞)
+                        </div>
+                    </div>
+                    <div class="md:w-2/3">
+                        <h3 class="text-xl font-bold mb-4 border-b border-stone-600 pb-2">為什麼要寫《搜神記》？</h3>
+                        <div class="space-y-6">
+                            <div class="flex">
+                                <div class="mr-4 text-3xl">⚰️</div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-amber-200">事件一：亡妾復活</h4>
+                                    <p class="text-sm text-stone-300 leading-relaxed mt-1">
+                                        干寶父親死時，善妒的母親將父親的愛妾推入墓穴活埋。十年後母親去世，合葬打開墓穴時，發現該妾伏在棺木上，竟然尚有體溫！救回後又活了數年，還能談論地下之事。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="mr-4 text-3xl">👻</div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-amber-200">事件二：兄長復生</h4>
+                                    <p class="text-sm text-stone-300 leading-relaxed mt-1">
+                                        干寶的兄長曾氣絕數日，身體不冷，後來醒轉。聲稱看見天地間鬼神之事，如夢初醒。
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="bg-stone-700 p-4 rounded mt-4">
+                                <p class="italic text-center text-stone-300">
+                                    這兩件親身經歷的家事，讓他深信「靈魂不滅」與「人鬼互動」的真實性，遂著書紀錄。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. 全書架構 -->
+        <section id="content" class="scroll-mt-24">
+            <div class="flex items-center mb-6">
+                <div class="h-8 w-1 bg-red-800 mr-3"></div>
+                <h2 class="text-3xl font-bold serif text-gray-800">《搜神記》全書架構</h2>
+            </div>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse bg-white shadow-sm rounded-lg overflow-hidden">
+                    <thead>
+                        <tr class="bg-gray-800 text-white">
+                            <th class="p-4 border-b border-gray-700 w-1/4">卷數</th>
+                            <th class="p-4 border-b border-gray-700 w-1/3">內容概要</th>
+                            <th class="p-4 border-b border-gray-700">特色與價值</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm text-gray-700">
+                        <tr class="hover:bg-stone-50 border-b">
+                            <td class="p-4 font-bold text-red-800">卷一 ～ 卷五</td>
+                            <td class="p-4">神仙、術士、神異事蹟<br><span class="text-xs text-gray-500">(神農、王子喬、彭祖)</span></td>
+                            <td class="p-4">富有神話色彩，展現宗教信仰與神人戀愛故事。</td>
+                        </tr>
+                        <tr class="hover:bg-stone-50 border-b">
+                            <td class="p-4 font-bold text-red-800">卷六 ～ 卷十</td>
+                            <td class="p-4">妖祥符命、卜筮夢兆</td>
+                            <td class="p-4">故事性較弱，多為徵兆紀錄。</td>
+                        </tr>
+                        <tr class="hover:bg-stone-50 border-b">
+                            <td class="p-4 font-bold text-red-800">卷十一</td>
+                            <td class="p-4">歷史傳說與故事<br><span class="text-xs text-gray-500">(干將莫邪、東海孝婦)</span></td>
+                            <td class="p-4"><strong>藝術性高</strong>，兼具思想性，部分宣揚封建道德。</td>
+                        </tr>
+                        <tr class="hover:bg-stone-50 border-b">
+                            <td class="p-4 font-bold text-red-800">卷十二 ～ 卷十五</td>
+                            <td class="p-4">各類精怪、靈奇之物<br><span class="text-xs text-gray-500">(霹靂、嫦娥奔月)</span></td>
+                            <td class="p-4">展現豐富的民間信仰與奇幻想像。</td>
+                        </tr>
+                        <tr class="hover:bg-stone-50 border-b bg-amber-50">
+                            <td class="p-4 font-bold text-red-800">卷十五 ～ 卷十九</td>
+                            <td class="p-4">鬼魂、花妖狐魅<br><span class="text-xs text-gray-500">(定伯賣鬼、談生妻鬼)</span></td>
+                            <td class="p-4"><strong>最優秀篇章</strong>，故事性強，人鬼互動精彩。</td>
+                        </tr>
+                        <tr class="hover:bg-stone-50">
+                            <td class="p-4 font-bold text-red-800">卷二十</td>
+                            <td class="p-4">動物報恩報仇<br><span class="text-xs text-gray-500">(義犬冢、黃衣童子)</span></td>
+                            <td class="p-4">強調善惡有報，具道德教化意義。</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- 5. 篇章選讀 (互動摺疊) -->
+        <section id="stories" class="scroll-mt-24">
+            <div class="flex items-center mb-6">
+                <div class="h-8 w-1 bg-red-800 mr-3"></div>
+                <h2 class="text-3xl font-bold serif text-gray-800">經典篇章選讀</h2>
+            </div>
+            <p class="mb-4 text-gray-600">點擊標題以閱讀原文與解析。</p>
+
+            <div class="space-y-4">
+                <!-- Story 1 -->
+                <div class="border border-gray-200 rounded-lg bg-white overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left font-bold text-lg text-gray-800 hover:bg-stone-50 flex justify-between items-center focus:outline-none story-toggle">
+                        <span>1. 女子化為丈夫 (卷六) - 陰陽與徵兆</span>
+                        <span class="text-red-500 text-xl transform transition-transform duration-200">+</span>
+                    </button>
+                    <div class="hidden px-6 py-6 border-t border-gray-100 bg-stone-50">
+                        <div class="classical-text mb-4">
+                            魏襄王十三年，有女子化為丈夫，與妻生子。京房易傳曰：「女子化為丈夫，茲謂陰昌，賤人為王。丈夫化為女子，茲謂陰勝陽，厥咎亡。」一曰：「男化為女宮刑濫，女化為男婦政行也。」
+                        </div>
+                        <div class="space-y-2 text-gray-700">
+                            <h4 class="font-bold text-red-800">解析：</h4>
+                            <p>這個故事並非單純的獵奇，而是反映了當時的政治與宇宙觀。</p>
+                            <ul class="list-disc list-inside pl-4 text-sm">
+                                <li><strong>陰昌：</strong>女子變男子，象徵陰氣強盛，預示地位低賤者將稱王。</li>
+                                <li><strong>陰勝陽：</strong>男子變女子，象徵國家將亡或宮刑氾濫。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story 2 -->
+                <div class="border border-gray-200 rounded-lg bg-white overflow-hidden">
+                    <button class="w-full px-6 py-4 text-left font-bold text-lg text-gray-800 hover:bg-stone-50 flex justify-between items-center focus:outline-none story-toggle">
+                        <span>2. 霹靂 (卷十二) - 對自然的具象想像</span>
+                        <span class="text-red-500 text-xl transform transition-transform duration-200">+</span>
+                    </button>
+                    <div class="hidden px-6 py-6 border-t border-gray-100 bg-stone-50">
+                        <div class="classical-text mb-4">
+                            晉，扶風楊道和，夏于田中，值雨，至桑樹下。霹靂下擊之。道和以鋤格，折其股，遂落地，不得去。唇如丹，目如鏡，毛角長三寸餘，狀似六畜，頭似獮猴。
+                        </div>
+                        <div class="space-y-2 text-gray-700">
+                            <h4 class="font-bold text-red-800">形象描述：</h4>
+                            <p>古人將雷電（霹靂）想像成具體的怪物：</p>
+                            <div class="grid grid-cols-2 gap-2 text-sm mt-2">
+                                <div class="bg-white p-2 rounded border">唇如丹 (紅嘴唇)</div>
+                                <div class="bg-white p-2 rounded border">目如鏡 (眼睛發光)</div>
+                                <div class="bg-white p-2 rounded border">狀似六畜/頭似獼猴</div>
+                                <div class="bg-white p-2 rounded border">被人用鋤頭打斷腿 (人定勝天的微弱暗示?)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Story 3 -->
+                <div class="border border-gray-200 rounded-lg bg-white overflow-hidden border-l-4 border-l-red-800">
+                    <button class="w-full px-6 py-4 text-left font-bold text-lg text-gray-800 hover:bg-stone-50 flex justify-between items-center focus:outline-none story-toggle">
+                        <span>⭐ 3. 宋定伯捉鬼 (卷十六) - 人鬼鬥智的經典</span>
+                        <span class="text-red-500 text-xl transform transition-transform duration-200">+</span>
+                    </button>
+                    <div class="hidden px-6 py-6 border-t border-gray-100 bg-stone-50">
+                        <div class="classical-text mb-4 space-y-2">
+                            <p>南陽宋定伯，年少時，夜行逢鬼。問之，鬼言：「我是鬼。」鬼問：「汝復誰？」定伯誑之，言：「我亦鬼。」鬼問：「欲至何所？」答曰：「欲至宛市。」鬼言：「我亦欲至宛市。」遂行。</p>
+                            <p>數里，鬼言：「步行太亟，可共遞相擔，何如？」定伯曰：「大善。」鬼便先擔定伯數里。鬼言：「卿太重，將非鬼也？」定伯言：「我新鬼，故身重耳。」定伯因復擔鬼，鬼略無重。如是再三。定伯復言：「我新鬼，不知有何所畏忌？」鬼答言：「惟不喜人唾。」於是共行。道遇水，定伯令鬼先渡，聽之，瞭然無聲音。定伯自渡，漕漼作聲。鬼復言：「何以作聲？」定伯曰：「新死，不習渡水故耳，勿怪吾也。」</p>
+                            <p>行欲至宛市，定伯便擔鬼著肩上，急持之。鬼大呼，聲咋咋然，索下，不復聽之。徑至宛市中下著地，化爲一羊，便賣之恐其變化，唾之。得錢千五百，乃去。於時石崇言：「定伯賣鬼，得錢千五百文。」</p>
+                        </div>
+                        <div class="space-y-4 text-gray-700">
+                            <h4 class="font-bold text-red-800">故事重點分析：</h4>
+                            <ol class="list-decimal list-inside space-y-2">
+                                <li><strong>人比鬼詐：</strong>宋定伯騙鬼說自己也是鬼，甚至說「我是新鬼，所以身體重」。</li>
+                                <li><strong>套話：</strong>得知鬼害怕「人的唾液」。</li>
+                                <li><strong>結局：</strong>在宛市將鬼變成的羊賣掉，得錢一千五，還吐口水防止變回。</li>
+                            </ol>
+                            <p class="text-sm bg-amber-100 p-3 rounded">
+                                <strong>意義：</strong>打破了對鬼神的恐懼，展現了人的智慧與勇氣，甚至帶有詼諧色彩。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. 自我評量 -->
+        <section id="quiz" class="scroll-mt-24 mb-12">
+            <div class="flex items-center mb-6">
+                <div class="h-8 w-1 bg-red-800 mr-3"></div>
+                <h2 class="text-3xl font-bold serif text-gray-800">自我評量</h2>
+            </div>
+            
+            <div class="bg-white p-8 rounded-xl shadow-lg border border-gray-200">
+                <div id="quiz-container">
+                    <!-- 題目會由 JS 插入 -->
+                </div>
+                <div id="quiz-result" class="hidden mt-6 text-center">
+                    <p class="text-2xl font-bold mb-2 serif" id="score-display"></p>
+                    <p class="text-gray-600" id="feedback-text"></p>
+                    <button onclick="resetQuiz()" class="mt-4 px-6 py-2 bg-gray-800 text-white rounded hover:bg-gray-700 transition">重新測驗</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 py-8 text-center">
+        <p class="mb-2">互動學習指引設計：基於 2024/03/11 課程簡報</p>
+        <p class="text-sm text-gray-500">內容來源：《搜神記》與志怪小說</p>
+    </footer>
+
+    <script>
+        // 1. 故事摺疊功能
+        const toggles = document.querySelectorAll('.story-toggle');
+        toggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+                const content = toggle.nextElementSibling;
+                const icon = toggle.querySelector('span:last-child');
+                
+                content.classList.toggle('hidden');
+                if (content.classList.contains('hidden')) {
+                    icon.textContent = '+';
+                    icon.classList.remove('rotate-45');
+                } else {
+                    icon.textContent = '+'; // 這裡用 CSS rotate 比較順
+                    icon.style.transform = 'rotate(45deg)';
+                }
+            });
+        });
+
+        // 2. 測驗資料
+        const quizData = [
+            {
+                question: "「志怪」一詞最早出自哪一本書？",
+                options: ["《山海經》", "《莊子‧逍遙遊》", "《史記》", "《論語》"],
+                answer: 1
+            },
+            {
+                question: "干寶撰寫《搜神記》的主要動機與下列何者最相關？",
+                options: ["為了考取功名", "感念家中親人死而復生的經歷", "受皇帝命令", "為了賺取稿費"],
+                answer: 1
+            },
+            {
+                question: "在〈宋定伯捉鬼〉的故事中，鬼最害怕什麼東西？",
+                options: ["陽光", "桃木劍", "人的唾液", "狗血"],
+                answer: 2
+            },
+            {
+                question: "下列哪一項不是魏晉南北朝志怪小說興盛的原因？",
+                options: ["戰亂頻繁，生死無常", "佛道宗教思想傳入與興盛", "科學昌明，為了破除迷信", "玄學興盛，喜談鬼神"],
+                answer: 2
+            }
+        ];
+
+        // 3. 渲染測驗
+        const quizContainer = document.getElementById('quiz-container');
+        let currentScore = 0;
+
+        function renderQuiz() {
+            quizContainer.innerHTML = '';
+            quizData.forEach((item, index) => {
+                const qDiv = document.createElement('div');
+                qDiv.className = 'mb-6 border-b border-gray-100 pb-6 last:border-0';
+                
+                const qTitle = document.createElement('h4');
+                qTitle.className = 'font-bold text-lg mb-3 text-gray-800';
+                qTitle.textContent = `${index + 1}. ${item.question}`;
+                qDiv.appendChild(qTitle);
+
+                const optionsDiv = document.createElement('div');
+                optionsDiv.className = 'space-y-2';
+
+                item.options.forEach((opt, optIndex) => {
+                    const label = document.createElement('label');
+                    label.className = 'flex items-center space-x-3 cursor-pointer p-2 rounded hover:bg-stone-50 transition';
+                    
+                    const input = document.createElement('input');
+                    input.type = 'radio';
+                    input.name = `question-${index}`;
+                    input.value = optIndex;
+                    input.className = 'form-radio text-red-600 h-4 w-4';
+                    
+                    const span = document.createElement('span');
+                    span.textContent = opt;
+                    span.className = 'text-gray-700';
+
+                    label.appendChild(input);
+                    label.appendChild(span);
+                    optionsDiv.appendChild(label);
+                });
+
+                qDiv.appendChild(optionsDiv);
+                quizContainer.appendChild(qDiv);
+            });
+
+            const submitBtn = document.createElement('button');
+            submitBtn.textContent = '提交答案';
+            submitBtn.className = 'w-full bg-red-900 text-white py-3 rounded-lg font-bold hover:bg-red-800 transition shadow mt-4';
+            submitBtn.onclick = calculateScore;
+            quizContainer.appendChild(submitBtn);
+        }
+
+        function calculateScore() {
+            let score = 0;
+            let allAnswered = true;
+            
+            // 重置樣式
+            const inputs = document.querySelectorAll('input[type="radio"]');
+            inputs.forEach(input => input.parentElement.classList.remove('bg-green-100', 'bg-red-100'));
+
+            quizData.forEach((item, index) => {
+                const selected = document.querySelector(`input[name="question-${index}"]:checked`);
+                if (!selected) {
+                    allAnswered = false;
+                } else {
+                    const val = parseInt(selected.value);
+                    if (val === item.answer) {
+                        score++;
+                        selected.parentElement.classList.add('bg-green-100', 'border', 'border-green-300');
+                    } else {
+                        selected.parentElement.classList.add('bg-red-100', 'border', 'border-red-300');
+                        // 標示正確答案
+                        const correctInput = document.querySelector(`input[name="question-${index}"][value="${item.answer}"]`);
+                        if(correctInput) correctInput.parentElement.classList.add('bg-green-50', 'text-green-800');
+                    }
+                }
+            });
+
+            if (!allAnswered) {
+                alert('請回答所有問題後再提交！');
+                return;
+            }
+
+            const resultDiv = document.getElementById('quiz-result');
+            const scoreDisplay = document.getElementById('score-display');
+            const feedbackText = document.getElementById('feedback-text');
+            const submitBtn = document.querySelector('#quiz-container button');
+
+            submitBtn.classList.add('hidden');
+            resultDiv.classList.remove('hidden');
+            
+            scoreDisplay.textContent = `得分：${score} / ${quizData.length}`;
+            if (score === quizData.length) {
+                feedbackText.textContent = "太厲害了！你已經完全掌握了《搜神記》的重點！🎉";
+                scoreDisplay.className += " text-green-600";
+            } else if (score >= quizData.length / 2) {
+                feedbackText.textContent = "不錯喔！再複習一下細節會更完美。👍";
+                scoreDisplay.className += " text-amber-600";
+            } else {
+                feedbackText.textContent = "沒關係，回到上面再讀一遍故事吧！📖";
+                scoreDisplay.className += " text-red-600";
+            }
+        }
+
+        function resetQuiz() {
+            document.getElementById('quiz-result').classList.add('hidden');
+            renderQuiz();
+        }
+
+        // 手機選單控制
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // 初始化
+        renderQuiz();
+    </script>
+</body>
+</html>
